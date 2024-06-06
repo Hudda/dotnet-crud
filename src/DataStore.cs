@@ -34,5 +34,6 @@ abstract class DataStore
       return;
     }
     context.Users.Remove(user);
+    context.SaveChanges();
   }
 }

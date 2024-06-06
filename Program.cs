@@ -2,8 +2,8 @@
   public static void Main() {
     DataStore store = new SQLiteDataStore();
     TestCRUD(store);
-    store = new SQLServerDataStore();
-    TestCRUD(store);
+    // store = new SQLServerDataStore();
+    // TestCRUD(store);
   }
 
   private static void TestCRUD(DataStore store) {
@@ -17,6 +17,9 @@
 
   private static void PrintUsers(DataStore store) {
     List<User> users = store.GetUsers();
+    if (users.Count == 0) {
+      Console.WriteLine("No User Found");
+    }
     foreach (User user in users) {
       Console.WriteLine($"User ${user.Id} : ${user.Name}");
     }
