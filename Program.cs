@@ -2,8 +2,8 @@
   public static void Main() {
     DataStore store = new SQLiteDataStore();
     TestCRUD(store);
-    // store = new SQLServerDataStore();
-    // TestCRUD(store);
+    store = new SQLServerDataStore();
+    TestCRUD(store);
   }
 
   private static void TestCRUD(DataStore store) {
