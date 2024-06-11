@@ -1,8 +1,8 @@
 ﻿class DotNetCRUD {
   public static void Main() {
-    DataStore store = new SQLiteDataStore();
+    DataStore store = new SQLiteDataStore(new SQLiteContext());
     TestCRUD(store);
-    store = new SQLServerDataStore();
+    store = new SQLServerDataStore(new SQLServerContext());
     TestCRUD(store);
     DataStore sqliteStore = new DataStoreProvider(new SQLiteContext());
     TestCRUD(sqliteStore);
