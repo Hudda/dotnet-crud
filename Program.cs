@@ -4,6 +4,10 @@
     TestCRUD(store);
     store = new SQLServerDataStore();
     TestCRUD(store);
+    DataStore sqliteStore = new DataStoreProvider(new SQLiteContext());
+    TestCRUD(sqliteStore);
+    DataStore sqlServerStore = new DataStoreProvider(new SQLServerContext());
+    TestCRUD(sqlServerStore);
   }
 
   private static void TestCRUD(DataStore store) {
